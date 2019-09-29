@@ -73,7 +73,12 @@ Route::domain('{account}.blog.test')->group(function () {
     });
 });
 
-//
+//子命名空间
+Route::get('/', 'Controller@index');
+
+Route::namespace('Admin')->group(function () {
+    Route::get('/admin', 'AdminController@index');
+});
 
 
 
